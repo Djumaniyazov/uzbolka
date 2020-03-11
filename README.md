@@ -1,15 +1,11 @@
 # Telegraf Inline Menu
 
-[![NPM Version](https://img.shields.io/npm/v/telegraf-inline-menu.svg)](https://www.npmjs.com/package/telegraf-inline-menu)
-[![node](https://img.shields.io/node/v/telegraf-inline-menu.svg)](https://www.npmjs.com/package/telegraf-inline-menu)
-[![Build Status](https://travis-ci.org/EdJoPaTo/telegraf-inline-menu.svg?branch=master)](https://travis-ci.org/EdJoPaTo/telegraf-inline-menu)
-[![Dependency Status](https://david-dm.org/EdJoPaTo/telegraf-inline-menu/status.svg)](https://david-dm.org/EdJoPaTo/telegraf-inline-menu)
-[![Peer Dependency Status](https://david-dm.org/EdJoPaTo/telegraf-inline-menu/peer-status.svg)](https://david-dm.org/EdJoPaTo/telegraf-inline-menu?type=peer)
-[![Dev Dependency Status](https://david-dm.org/EdJoPaTo/telegraf-inline-menu/dev-status.svg)](https://david-dm.org/EdJoPaTo/telegraf-inline-menu?type=dev)
+# uzbolka
+t-shirt_shop
 
-This menu library is made to easily create an inline menu for your Telegram bot.
-
-![Example Food Menu](media/example-food.gif)
+- People can create their designs or choose a ready designed t-shirt, by selecting a size and color of the shirt.
+- Once a customer places an order, they will get the order confirmation and the t-shirt with the chosen design would be delivered to their provided address or location within 2 business days.
+- Eventually they would be able to checkout using Click e-payment service.
 
 # Installation
 
@@ -48,9 +44,7 @@ bot.startPolling()
 
 ## More interesting one
 
-Look at the code here :  [example.ts](examples/main-typescript.ts) / [example.js](examples/main-javascript.js)
-
-![Example Food Menu](media/example-food.gif)
+Look at the code here : (uzbolka)/main-javascript.js)
 
 # Documentation
 
