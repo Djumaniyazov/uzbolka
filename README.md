@@ -1,15 +1,6 @@
 # Telegraf Inline Menu
-
-[![NPM Version](https://img.shields.io/npm/v/telegraf-inline-menu.svg)](https://www.npmjs.com/package/telegraf-inline-menu)
-[![node](https://img.shields.io/node/v/telegraf-inline-menu.svg)](https://www.npmjs.com/package/telegraf-inline-menu)
-[![Build Status](https://travis-ci.org/EdJoPaTo/telegraf-inline-menu.svg?branch=master)](https://travis-ci.org/EdJoPaTo/telegraf-inline-menu)
-[![Dependency Status](https://david-dm.org/EdJoPaTo/telegraf-inline-menu/status.svg)](https://david-dm.org/EdJoPaTo/telegraf-inline-menu)
-[![Peer Dependency Status](https://david-dm.org/EdJoPaTo/telegraf-inline-menu/peer-status.svg)](https://david-dm.org/EdJoPaTo/telegraf-inline-menu?type=peer)
-[![Dev Dependency Status](https://david-dm.org/EdJoPaTo/telegraf-inline-menu/dev-status.svg)](https://david-dm.org/EdJoPaTo/telegraf-inline-menu?type=dev)
-
-This menu library is made to easily create an inline menu for your Telegram bot.
-
-![Example Food Menu](media/example-food.gif)
+## Uzbolka - custom t-shirt shop
+Purchase a your own designed t-shirt and get it delivered within 2 days.
 
 # Installation
 
@@ -45,12 +36,6 @@ bot.use(menu.init())
 
 bot.startPolling()
 ```
-
-## More interesting one
-
-Look at the code here :  [example.ts](examples/main-typescript.ts) / [example.js](examples/main-javascript.js)
-
-![Example Food Menu](media/example-food.gif)
 
 # Documentation
 
