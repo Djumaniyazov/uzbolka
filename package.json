@@ -11,8 +11,9 @@
     "build": "del dist && tsc",
     "prepare": "npm run build",
     "preexample-js": "npm run build",
-    "example-js": "node examples/main-javascript.js",
-    "start": "ts-node examples/main-typescript.ts",
+    "start_js": "node uzbolka/main-javascript.js",
+    "start": "ts-node uzbolka/uzbolka_bot.ts",
+    "start_payBot": "node uzbolka/pay_bot.js",
     "pretest": "npm run build",
     "test": "xo && nyc ava"
   },
@@ -30,7 +31,9 @@
     "url": "https://github.com/EdJoPaTo/telegraf-inline-menu/issues"
   },
   "homepage": "https://github.com/EdJoPaTo/telegraf-inline-menu#readme",
-  "dependencies": {},
+  "dependencies": {
+    "telegraf-inline-menu": "^4.0.0"
+  },
   "peerDependencies": {
     "telegraf": "^3.26.0"
   },
@@ -110,7 +113,7 @@
     "overrides": [
       {
         "files": [
-          "examples/**/*.ts"
+          "uzbolka/**/*.ts"
         ],
         "rules": {
           "@typescript-eslint/no-require-imports": "warn",
@@ -120,7 +123,7 @@
       },
       {
         "files": [
-          "examples/**/*.js"
+          "uzbolka/**/*.js"
         ],
         "rules": {
           "@typescript-eslint/explicit-function-return-type": "off",

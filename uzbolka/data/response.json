@@ -1,0 +1,39 @@
+{
+    "update_id": 436220835,
+    "message": {
+        "message_id": 1244,
+        "from": {
+            "id": 55612880,
+            "is_bot": false,
+            "first_name": "Artur",
+            "last_name": "Djumaniyazov",
+            "language_code": "en"
+        },
+        "chat": {
+            "id": 55612880,
+            "first_name": "Artur",
+            "last_name": "Djumaniyazov",
+            "type": "private"
+        },
+        "date": 1582227628,
+        "photo": [{
+            "file_id": "AgACAgEAAxkBAAIE3F5O4Kx98aAe4_vcAY5op9FrIKCdAAKtqDEbLtJ5RqfV2c7r8HNJbhUUMAAEAQADAgADbQADifQFAAEYBA",
+            "file_unique_id": "AQADbhUUMAAEifQFAAE",
+            "file_size": 12268,
+            "width": 180,
+            "height": 320
+        }, {
+            "file_id": "AgACAgEAAxkBAAIE3F5O4Kx98aAe4_vcAY5op9FrIKCdAAKtqDEbLtJ5RqfV2c7r8HNJbhUUMAAEAQADAgADeAADivQFAAEYBA",
+            "file_unique_id": "AQADbhUUMAAEivQFAAE",
+            "file_size": 50958,
+            "width": 450,
+            "height": 800
+        }, {
+            "file_id": "AgACAgEAAxkBAAIE3F5O4Kx98aAe4_vcAY5op9FrIKCdAAKtqDEbLtJ5RqfV2c7r8HNJbhUUMAAEAQADAgADeQADh_QFAAEYBA",
+            "file_unique_id": "AQADbhUUMAAEh_QFAAE",
+            "file_size": 110721,
+            "width": 720,
+            "height": 1280
+        }]
+    }
+}
