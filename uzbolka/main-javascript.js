@@ -256,8 +256,11 @@ createYourOwnDesignMenu
     .submenu(messages.MENU.UPLOADED_DESIGNS, messages.MENU.ACTIONS.UPLOADED_DESIGNS, new TelegrafInlineMenu('', uploadedPhoto))
     .select(messages.MENU.ACTIONS.CHOOSE_UPLOADED_DESIGNS, Object.keys(uploaded_file_object), {
         isSetFunc: (_ctx, key) => {
-            if(uploaded_file_object[options.UPLOADED_DESIGNS.FRONT] === "")
-                return _ctx.answerCbQuery(messages.CALLBACK_ANSWERS.PIC_IS_NOT_UPLOADED)
+            if(_ctx.match[1] === Object.keys(uploaded_file_object)[0]) {
+                _ctx.answerCbQuery(messages.CALLBACK_ANSWERS.UPLOAD_FRONT_DESIGN)
+                
+                return 
+            }
             else if((_ctx.match[1] === Object.keys(uploaded_file_object)[1]  && uploaded_file_object[_ctx.match[1]] === "") ||
                 (_ctx.match[1] === Object.keys(uploaded_file_object)[2]  && uploaded_file_object[_ctx.match[1]] === "")) 
                 {
