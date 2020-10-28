@@ -24,10 +24,10 @@ const ZAKAZI_CHAT_ID = '-1001362009955'
 const createYourOwnDesignMenu = new TelegrafInlineMenu(messages.MENU.CONTEXT.CREATE_YOUR_OWN)
 const chooseReadyDesignMenu = new TelegrafInlineMenu(messages.MENU.CONTEXT.CHOOSE_READY_DESIGN)
 
-menu.submenu(messages.MENU.CHOOSE_READY_DESIGN, messages.MENU.ACTIONS.READY_DESIGN, chooseReadyDesignMenu, {
+menu.submenu(messages.MENU.CHOOSE_READY_DESIGN, messages.MENU.ACTIONS.READY_DESIGN, chooseReadyDesignMenu, createYourOwnDesignMenu, {
 })
 
-menu.submenu(messages.MENU.CREATE_YOUR_OWN, messages.MENU.ACTIONS.YOUR_OWN, createYourOwnDesignMenu, {
+menu.submenu(messages.MENU.CREATE_YOUR_OWN, messages.MENU.ACTIONS.YOUR_OWN, createYourOwnDesignMenu, createYourOwnDesignMenu, {
     // hide: () => mainMenuToggle
 })
 
@@ -48,6 +48,22 @@ function shirtInfoText(_ctx, key) {
     }
     return key
 }
+
+var contactKeyboardButtons = {
+    "parse_mode": "Markup",
+    "reply_markup": {
+        "one_time_keyboard": true,
+        "keyboard": [[{
+            text: "Поделится контактом",
+            request_contact: true
+        }],
+        [{
+            text:"Поделится адресом",
+            request_location: true
+        }]]
+    }
+};
+
 
 function shirtSelectText(ctx) {
     const shirtName = ctx.match[1]
@@ -119,7 +135,7 @@ const findCustomerInputAddress = (ctx) => {
 }
 
 chooseReadyDesignMenu
-    .submenu(designs.NAMES.TEXT_DESIGNS, designs.NAMES.ACTIONS.TEXT_DESIGNS, new TelegrafInlineMenu(messages.MENU.CONTEXT.CHOOSE_DESIGN, pic))
+    .submenu(designs.NAMES.TEXT_DESIGNS, designs.NAMES.ACTIONS.TEXT_DESIGNS, new TelegrafInlineMenu(messages.MENU.CONTEXT.CHOOSE_DESIGN, pic), contactKeyboardButtons)
     .select('img', Object.keys(designKeys), {
         isSetFunc: (_ctx, key) => {
             return key === _ctx.match[1]
@@ -138,10 +154,7 @@ chooseReadyDesignMenu
         textFunc: shirtInfoText,
         columns: 2
     })
-    .submenu('random text', 'aaa', new TelegrafInlineMenu('Интервью'), {
-        // textFunc: 
-    })
-    .button(messages.BUTTONS.ADD_ADDRESS, messages.BUTTONS.ACTIONS.ADD_ADDRESS, {
+    .simpleButton('Добавить адресс', messages.BUTTONS.ACTIONS.ADD_ADDRESS, {
         doFunc: async ctx => {
             // TODO: new menu for address and add question here.
             ctx.answerCbQuery(messages.CALLBACK_ANSWERS.ADD_ADDRESS, true);
@@ -169,8 +182,6 @@ chooseReadyDesignMenu
 //         shirtNames[key] = {}
 //     }
 // })
-
-menu.setCommand('start')
 
 /** ************** CUSTOM DESIGN MENU ************** */
 
@@ -253,7 +264,7 @@ const uploadedPhoto = {
 }
 
 createYourOwnDesignMenu
-    .submenu(messages.MENU.UPLOADED_DESIGNS, messages.MENU.ACTIONS.UPLOADED_DESIGNS, new TelegrafInlineMenu('', uploadedPhoto))
+    .submenu(messages.MENU.UPLOADED_DESIGNS, messages.MENU.ACTIONS.UPLOADED_DESIGNS, new TelegrafInlineMenu('', uploadedPhoto), contactKeyboardButtons)
     .select(messages.MENU.ACTIONS.CHOOSE_UPLOADED_DESIGNS, Object.keys(uploaded_file_object), {
         isSetFunc: (_ctx, key) => {
             if(_ctx.match[1] === Object.keys(uploaded_file_object)[0]) {
@@ -292,12 +303,6 @@ createYourOwnDesignMenu
         textFunc: shirtInfoText,
         columns: 2
     })
-    .button(messages.BUTTONS.ADD_ADDRESS, 'loca', {
-        doFunc: async ctx => {
-            // TODO: new menu for address and add question here.
-            ctx.answerCbQuery(messages.CALLBACK_ANSWERS.ADD_ADDRESS, true);
-        }
-    })
     .button('🏁Завершить заказ личного дизайна ✔️', 'sold', {
         doFunc: async ctx => {
             if(customerAddress || customerLocation) {
@@ -326,6 +331,7 @@ createYourOwnDesignMenu
         }
     })
 
+menu.setCommand('start')
 
 bot.use(session())
 

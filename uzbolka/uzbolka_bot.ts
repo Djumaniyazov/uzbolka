@@ -19,7 +19,6 @@ const menu = new TelegrafInlineMenu('Главное Меню')
 const createYourOwnDesignMenu = new TelegrafInlineMenu('- Создайте свой дизайн на сайте.\n - Заскриншотьте дизайн.\n- Выложите его чтоб заказать')
 const chooseReadyDesignMenu = new TelegrafInlineMenu('Найти готовый дизайн')
 
-
 menu.submenu('👕Выбрать готовый дизайн.🖼', 'chooseReady', chooseReadyDesignMenu, {
   // hide: () => mainMenuToggle
 })
@@ -148,8 +147,8 @@ const pic = {
 chooseReadyDesignMenu.submenu('Американские дизайны', 'americanDesign', new TelegrafInlineMenu('', pic))
   .setCommand('americanDesign')
   .select('img', values, {
-    isSetFunc: (_ctx, key) =>
-      key === designKeys[values[key]],
+    isSetFunc: (_ctx) =>
+      true,
     setFunc: (_ctx, key) => {
         // designInfo[key] = key
         globalKey = key
